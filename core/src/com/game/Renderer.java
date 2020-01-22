@@ -24,7 +24,7 @@ public class Renderer {
     private ArrayList<Explosion> explosions;
     private Minion minion;
     private Cloud[] clouds;
-    private List<Bullet> plantains;
+    private ArrayList<Plantain> plantains;
     private TextManager startMessage;
     private TextManager ballsMessage;
     private com.game.helpers.ScoreWindow scoreWindow;

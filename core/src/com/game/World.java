@@ -47,7 +47,7 @@ public class World {
         troposphere = new com.game.helpers.Troposphere();
         Vector2 posPlane = new Vector2(width / 2 - 50, 20);
         plane = new Plane(posPlane, planesBullets);
-        heavyCloudWithPlantains = new com.game.helpers.HeavyCloudWithPlantains(height, width, plane);
+        heavyCloudWithPlantains = new com.game.helpers.HeavyCloudWithPlantains(plane);
         Vector2 posMinion = new Vector2((float)width / 2 - 50, height + 200);
         minion = new Minion(posMinion, this);
     }
@@ -169,7 +169,7 @@ public class World {
         }
     }
 
-    private boolean CheckCollisionWithBullets(MaterialEntity entity, ArrayList<Bullet> list, boolean bulletExplodes) {
+    private <T extends Bullet> boolean CheckCollisionWithBullets(MaterialEntity entity, ArrayList<T> list, boolean bulletExplodes) {
         for (int i = 0; i < list.size(); i++) {
             Bullet bullet = list.get(i);
             if (isCollides(entity, bullet)) {
